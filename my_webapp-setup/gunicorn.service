@@ -1,5 +1,4 @@
-# This should go:
-# /etc/systemd/system/gunicorn.service
+/etc/systemd/system/gunicorn.service
 
 # Reference
 # http://docs.gunicorn.org/en/stable/deploy.html#nginx-configuration
@@ -12,8 +11,8 @@ After=network.target
 
 [Service]
 PIDFile=/run/gunicorn/pid
-User=root
-Group=root
+User=www-data
+Group=www-data
 WorkingDirectory=/home/ubuntu/my_webapp
 
 ExecStart=/home/ubuntu/anaconda3/bin/gunicorn --pid /run/gunicorn/pid app:app

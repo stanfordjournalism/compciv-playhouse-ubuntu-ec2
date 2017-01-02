@@ -19,8 +19,19 @@ A set of scripts and instructions to get a machine running on EC2 with all the t
 sudo systemctl start nginx.service
 sudo systemctl start gunicorn.socket 
 sudo systemctl daemon-reload
+
+systemctl status nginx.service
+journalctl -xe
 ~~~
 
 
+# Todo
+
+- test replacing root with www-data user
+- test ~/public/ folder
+- disable sites-enabled
+- need some way to kill nginx to prevent this error:
+  
+    ---- nginx[1400]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
 
 
